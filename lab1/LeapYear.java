@@ -1,4 +1,5 @@
 /** Class that determines whether or not a year is a leap year.
+<<<<<<< HEAD
  *  @author LANCE WONG
  */
 public class LeapYear {
@@ -13,6 +14,12 @@ public class LeapYear {
 		return (false);	
 	}
 
+=======
+ *  @author YOUR NAME HERE
+ */
+public class LeapYear {
+
+>>>>>>> 2e2cd37ccab49b523fec78631071b5128ee18e7e
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
      */
