@@ -84,9 +84,13 @@ public class LinkedListDeque<T> {
     public void printDeque() {
         GodNode p = sentinel;
         while (p.next != sentinel) {
-            System.out.print(p.next.item + " ");
+            System.out.print(p.next.item);
+            if (p.next.next != sentinel) {
+                System.out.print(" ");
+            }
             p = p.next;
         }
+        System.out.println();
     }
 
     /* Removes and returns front item; return null if doesn't exist */
