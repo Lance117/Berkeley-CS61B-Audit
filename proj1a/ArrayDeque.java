@@ -50,7 +50,7 @@ public class ArrayDeque<T> {
         }
         items[nextFirst] = item;
         first = nextFirst;
-        nextFirst = (nextFirst - 1) % capacity;
+        nextFirst--;
         if (nextFirst < 0) {
             nextFirst += capacity;
         }
@@ -100,7 +100,7 @@ public class ArrayDeque<T> {
             return null;
         }
         double R = (double) size / items.length;
-        if (size >= 16 && R < 0.25) {
+        if (capacity > 16 && R < 0.25) {
             capacity *= ((double) 1 / RFACTOR);
             resize(capacity, capacity * RFACTOR);
         }
@@ -118,14 +118,14 @@ public class ArrayDeque<T> {
             return null;
         }
         double R = size / items.length;
-        if (R < 0.25) {
+        if (capacity > 16 && R < 0.25) {
             capacity *= (1 / RFACTOR);
             resize(capacity, capacity * RFACTOR);
         }
         T x = items[last];
         items[last] = null;
         nextLast = last;
-        last = (last - 1) % capacity;
+        last--;
         if (last < 0) {
             last += capacity;
         }
