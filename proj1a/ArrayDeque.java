@@ -16,11 +16,11 @@ public class ArrayDeque<T> {
     public static final int RFACTOR = 2;
 
     /* Resizes array to target capacity */
-    private void resize(int capacity, int oldCap) {
+    private void resize(int newSize, int oldCap) {
         int i, j;
         int newPos = capacity / 4;
-        T[] a = (T[]) new Object[capacity];
-        for (i = first, j = newPos; ; i = (i + 1) % oldCap, j++) {
+        T[] a = (T[]) new Object[newSize];
+        for (i = first, j = newPos;; i = (i + 1) % oldCap, j++) {
             a[j] = items[i];
             if (i == last) {
                 break;
@@ -82,7 +82,7 @@ public class ArrayDeque<T> {
     /* Prints the items in the deque from nextFirst to nextLast, separated by a space */
     public void printDeque() {
         int i;
-        for (i = first; ; i = (i + 1) % capacity) {
+        for (i = first;; i = (i + 1) % capacity) {
             System.out.print(items[i]);
             if (i != last) {
                 System.out.print(" ");
@@ -94,7 +94,7 @@ public class ArrayDeque<T> {
         System.out.println();
     }
 
-    /* Removes and returns the item at the front of the deque. If no such item exists, returns null. */
+    /* Removes and returns the item at front of the deque. If no such item exists, returns null. */
     public T removeFirst() {
         if (size == 0) {
             return null;
@@ -112,7 +112,7 @@ public class ArrayDeque<T> {
         return x;
     }
 
-    /* Removes and returns the item at the back of the deque. If no such item exists, returns null */
+    /* Removes and returns the item at back of the deque. If no such item exists, returns null */
     public T removeLast() {
         if (size == 0) {
             return null;

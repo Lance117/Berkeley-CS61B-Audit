@@ -1,25 +1,29 @@
-/** Deque implementation
+/**
+ * Deque implementation
+ *
  * @sentinel: keeps track of the first and last nodes
  * @size: keeps track of deque size
  */
 public class LinkedListDeque<T> {
 
-    /** GodNode class
+    /**
+     * GodNode class
+     *
      * @item: value the node holds
      * @next: pointer to next node
      */
-   private class GodNode {
-       public T item;
-       public GodNode next;
-       public GodNode prev;
+    public class GodNode {
+        private T item;
+        private GodNode next;
+        private GodNode prev;
 
-       /* GodNode constructor */
-       public GodNode(T i, GodNode n, GodNode p) {
-           item = i;
-           next = n;
-           prev = p;
-       }
-   }
+        /* GodNode constructor */
+        public GodNode(T i, GodNode n, GodNode p) {
+            item = i;
+            next = n;
+            prev = p;
+        }
+    }
 
     /* first item at sentinel.next, last at sentinel.prev */
     private GodNode sentinel;
