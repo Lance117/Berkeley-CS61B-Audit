@@ -18,7 +18,7 @@ public class ArrayDeque<T> {
     /* Resizes array to target capacity */
     private void resize(int newSize, int oldCap) {
         int i, j;
-        int newPos = capacity / 4;
+        int newPos = newSize / 4;
         T[] a = (T[]) new Object[newSize];
         for (i = first, j = newPos;; i = (i + 1) % oldCap, j++) {
             a[j] = items[i];
