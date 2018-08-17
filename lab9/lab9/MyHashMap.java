@@ -14,7 +14,7 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
     private static final int DEFAULT_SIZE = 16;
     private static final double MAX_LF = 0.75;
 
-    private ArrayMap[] buckets;
+    private ArrayMap<K, V>[] buckets;
     private int size;
 
     private int loadFactor() {
@@ -60,7 +60,7 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
     /* Returns true if map contains key, false otherwise. */
     public boolean containsKey(K key) {
         int h = hash(key);
-        return (buckets[h].containsKey(key)) ? true : false;
+        return buckets[h].containsKey(key);
     }
 
     /* Associates the specified value with the specified key in this map. */
@@ -87,7 +87,7 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
         for (ArrayMap map : temp) {
             for (Object key : map.keySet()) {
                 int h = hash((K)key);
-                buckets[h].put(key, map.get(key));
+                buckets[h].put((K)key, (V)map.get(key));
             }
         }
     }
