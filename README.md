@@ -15,6 +15,8 @@ Homework
 
 - HW2: modeled a [Percolation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw2/hw2) system using the Union Find ADT and wrote a [Monte Carlo Simulation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw2/hw2/PercolationStats.java) to estimate the percolation threshold.
 
+- HW3: [Hashing](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw3/hw3/hash) - found out it's really hard to create a perfect hash function
+
 Lab
 ---
 - Lab1: [javac, java, git](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab1) - Java basics
