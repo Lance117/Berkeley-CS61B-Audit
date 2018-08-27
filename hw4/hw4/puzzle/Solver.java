@@ -45,11 +45,8 @@ public class Solver {
      * @param initial - initial WorldState
      */
     public Solver(WorldState initial) {
-        /* marked - keeps track of states in sequence */
-        HashSet<WorldState> marked = new HashSet<>();
         SearchNode BMS = null;
         SearchNode initNode = new SearchNode(initial, 0, null);
-        marked.add(initNode.state);
         MinPQ<SearchNode> pq = new MinPQ<>();
         pq.insert(initNode);
 
