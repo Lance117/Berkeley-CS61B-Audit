@@ -55,7 +55,6 @@ public class Solver {
             BMS = pq.delMin();
             SearchNode prev = BMS.prev;
             WorldState current = BMS.state;
-            marked.add(current);
             if (current.isGoal()) {
                 break;
             }
