@@ -17,6 +17,8 @@ Homework
 
 - HW3: [Hashing](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw3/hw3/hash) - found out it's really hard to create a perfect hash function
 
+- HW4: [Puzzle](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw4/hw4/puzzle) - used a min PQ to implement the [A* Search Algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm). Created a [Solver](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw4/hw4/puzzle/Solver.java) class to solve WorldState puzzles. The Solver can solve a [sliding numbers tile](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw4/hw4/puzzle/Board.java) and [Word](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw4/hw4/puzzle/Word.java) puzzles.
+
 Lab
 ---
 - Lab1: [javac, java, git](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab1) - Java basics
