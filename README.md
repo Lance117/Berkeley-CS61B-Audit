@@ -13,7 +13,7 @@ Homework
 -------
 - HW1: practice writing and using [Packages, Interfaces, Generics, Exceptions, Iteration](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw1). Implemented Karplus-Strong algorithm using an [Array Ring Buffer](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw1/synthesizer/ArrayRingBuffer.java)
 
-- HW2: modeled a [Percolation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw2/hw2) system using the Union Find ADT and wrote a [Monte Carlo Simulation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw2/hw2/PercolationStats.java) to estimate the percolation threshold.
+- HW2: modeled a [Percolation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw2/hw2/Percolation.java) system using the Union Find ADT and wrote a [Monte Carlo Simulation](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw2/hw2/PercolationStats.java) to estimate the percolation threshold.
 
 - HW3: [Hashing](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw3/hw3/hash) - found out it's really hard to create a perfect hash function
 
@@ -30,3 +30,5 @@ Lab
 - Lab9: [Tree Maps vs. Hash Maps](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab9/lab9) - created a BSTMap and Hash Map
 
 - Lab10: [Priority Queues](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab10/ArrayHeap.java) - implemented heap methods
+
+- Lab11: [Graphs](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab11/lab11/graphs/MazeBreadthFirstPaths.java) - implemented Breadth First Search to solve mazes
