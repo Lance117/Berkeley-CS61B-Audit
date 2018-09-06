@@ -35,7 +35,13 @@ public class MergeSort {
     private static <Item extends Comparable> Queue<Queue<Item>>
             makeSingleItemQueues(Queue<Item> items) {
         // Your code here!
-        return null;
+        Queue<Queue<Item>> ret = new Queue<>();
+        for (Item x : items) {
+            Queue<Item> temp = new Queue<>();
+            temp.enqueue(x);
+            ret.enqueue(temp);
+        }
+        return ret;
     }
 
     /**
@@ -54,13 +60,57 @@ public class MergeSort {
     private static <Item extends Comparable> Queue<Item> mergeSortedQueues(
             Queue<Item> q1, Queue<Item> q2) {
         // Your code here!
-        return null;
+        Queue<Item> ret = new Queue<>();
+        while (!q1.isEmpty() || !q2.isEmpty()) {
+            ret.enqueue(getMin(q1, q2));
+        }
+        return ret;
     }
 
     /** Returns a Queue that contains the given items sorted from least to greatest. */
     public static <Item extends Comparable> Queue<Item> mergeSort(
             Queue<Item> items) {
         // Your code here!
+        Queue<Queue<Item>> qList = makeSingleItemQueues(items);
+        while (qList.size() > 1) {
+            Queue<Item> q1 = qList.dequeue();
+            Queue<Item> q2 = qList.dequeue();
+            qList.enqueue(mergeSortedQueues(q1, q2));
+        }
+        items = qList.dequeue();
         return items;
     }
+
+    public static void main(String[] args) {
+        Queue<String> students = new Queue<String>();
+        students.enqueue("Alice");
+        students.enqueue("Vanessa");
+        students.enqueue("Ethan");
+
+        System.out.println("---unsorted---");
+        for (String s : students) {
+            System.out.print(s + ", ");
+        }
+        System.out.println("END");
+
+        Queue<String> sortedStudents = mergeSort(students);
+        System.out.println("---sorted---");
+        for (String s : sortedStudents) {
+            System.out.print(s + ", ");
+        }
+        System.out.println("END");
+
+        System.out.println("---test merge of sorted queues---");
+        Queue<String> qa = new Queue<>();
+        Queue<String> qb = new Queue<>();
+        qa.enqueue("Alice");
+        qa.enqueue("Vanessa");
+        qb.enqueue("Ethan");
+        Queue<String> sortedQ = mergeSortedQueues(qa, qb);
+        for (String s : sortedQ) {
+            System.out.print(s + ", ");
+        }
+        System.out.println("END");
+    }
 }
+
