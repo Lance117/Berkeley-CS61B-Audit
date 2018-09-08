@@ -32,3 +32,5 @@ Lab
 - Lab10: [Priority Queues](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab10/ArrayHeap.java) - implemented heap methods
 
 - Lab11: [Graphs](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab11/lab11/graphs/MazeBreadthFirstPaths.java) - implemented Breadth First Search to solve mazes
+
+- Lab12: [Merge Sort and Quick Sort](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab12) - used queues do merge and quick sorts
