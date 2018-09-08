@@ -1,5 +1,7 @@
 import edu.princeton.cs.algs4.Queue;
 
+import java.util.Random;
+
 public class QuickSort {
     /**
      * Returns a new queue that contains the given queues catenated together.
@@ -48,12 +50,59 @@ public class QuickSort {
             Queue<Item> unsorted, Item pivot,
             Queue<Item> less, Queue<Item> equal, Queue<Item> greater) {
         // Your code here!
+        if (unsorted == null) {
+            return;
+        }
+        while (!unsorted.isEmpty()) {
+            Item x = unsorted.dequeue();
+            if (x.compareTo(pivot) < 0) {
+                less.enqueue(x);
+            }
+            else if (x.compareTo(pivot) > 0) {
+                greater.enqueue(x);
+            }
+            else {
+                equal.enqueue(x);
+            }
+        }
     }
 
     /** Returns a Queue that contains the given items sorted from least to greatest. */
     public static <Item extends Comparable> Queue<Item> quickSort(
             Queue<Item> items) {
         // Your code here!
+        if (items != null && items.size() > 1) {
+            Queue<Item> less = new Queue<>();
+            Queue<Item> equal = new Queue<>();
+            Queue<Item> greater = new Queue<>();
+            partition(items, getRandomItem(items), less, equal, greater);
+            less = quickSort(less);
+            equal = quickSort(equal);
+            greater = quickSort(greater);
+            items = catenate(less, equal);
+            items = catenate(items, greater);
+        }
         return items;
+    }
+
+    public static void main(String[] args) {
+        Queue<Integer> q = new Queue<>();
+        Random r = new Random();
+        for (int i = 0; i < 5; i++) {
+            q.enqueue(r.nextInt(100));
+        }
+
+        System.out.println("---unsorted---");
+        for (int x : q) {
+            System.out.print(x + ", ");
+        }
+        System.out.println("END");
+
+        Queue<Integer> sortedQ = quickSort(q);
+        System.out.println("---sorted---");
+        for (int y : sortedQ) {
+            System.out.print(y + ", ");
+        }
+        System.out.println("END");
     }
 }
