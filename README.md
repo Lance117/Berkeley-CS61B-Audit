@@ -9,6 +9,15 @@ Projects
 
 - proj1b: did some JUnit [testing](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/proj1b)
 
+- proj3: Bear Maps. This is a web mapping application that allows users to explore and find the shortest path between two points in Berkeley
+###
+| File | Description |
+| --- | --- |
+| [Rasterer](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/Rasterer.java) | Renders map images given a user's requested area and level of zoom |
+| [GraphDB](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/GraphDB.java) | Graph representation of the contents of [Berkeley OSM](https://github.com/Berkeley-CS61B/library-sp18/tree/proj3/data)|
+| [GraphBuildingHandler](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/GraphBuildingHandler.java) | Handler used by SAX parser to parse Nodes and Ways from Berkeley OSM file |
+| [Router](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/Router.java) | Uses A* search algorithm to find the shortest path between two points in Berkeley. Todo: driving directions, Autocomplete, and Search |
+
 Homework
 -------
 - HW1: practice writing and using [Packages, Interfaces, Generics, Exceptions, Iteration](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/hw1). Implemented Karplus-Strong algorithm using an [Array Ring Buffer](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/hw1/synthesizer/ArrayRingBuffer.java)
