@@ -23,6 +23,7 @@ public class GraphDB {
 
     private final Map<Long, Node> nodes = new HashMap<>();
     private final Map<String, List<Long>> names = new HashMap<>();
+    private final TrieST<Long> st = new TrieST<>();
 
     /**
      * Example constructor shows how to create and start an XML parser.
@@ -64,7 +65,7 @@ public class GraphDB {
         Iterator<Map.Entry<Long, Node>> nodes_iterator = nodes.entrySet().iterator();
         while (nodes_iterator.hasNext()) {
             Map.Entry<Long, Node> item = nodes_iterator.next();
-            if (item.getValue().adj.isEmpty()) {
+            if (item.getValue().adj.isEmpty() && item.getValue().name.isEmpty()) {
                 nodes_iterator.remove();
             }
         }
@@ -219,11 +220,14 @@ public class GraphDB {
      * @param locationName node's cleaned name
      */
     void addName(long id, String locationName) {
-        if (!names.containsKey(locationName)) {
-            names.put(locationName, new LinkedList<>());
+        String cleanedName = cleanString(locationName);
+
+        if (!names.containsKey(cleanedName)) {
+            names.put(cleanedName, new LinkedList<>());
         }
-        names.get(locationName).add(id);
+        names.get(cleanedName).add(id);
         nodes.get(id).name = locationName;
+        st.put(cleanedName, id);
     }
 
     /**
@@ -251,12 +255,35 @@ public class GraphDB {
     }
 
     /**
+     * Returns a list of keys that share a prefix.
+     * @param prefix prefix entered in search box
+     * @return list of keys
+     */
+    public List<String> keysWithPrefix(String prefix) {
+        List<String> result = new LinkedList<>();
+        for (String key : st.keysWithPrefix(cleanString(prefix))) {
+            Long id = names.get(key).get(0);
+            String fullName = getName(id);
+            result.add(fullName);
+        }
+        return result;
+    }
+
+    public List<Long> getLocations(String locationName) {
+        List<Long> result = new LinkedList<>();
+        for (long v : names.get(cleanString(locationName))) {
+            result.add(v);
+        }
+        return result;
+    }
+
+    /**
      * throw an IllegalArgumentException if vertex not in graph
      * @param v vertex to validate
      */
     private void validateVertex(long v) {
         if (!nodes.containsKey(v)) {
-            throw new IllegalArgumentException("Vertex " + v + "is not in the graph.");
+            throw new IllegalArgumentException("Vertex " + v + " is not in the graph.");
         }
     }
 
