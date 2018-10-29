@@ -9,14 +9,7 @@ Projects
 
 - proj1b: did some JUnit [testing](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/proj1b)
 
-- proj3: Bear Maps. This is a web mapping application that allows users to explore and find the shortest path between two points in Berkeley. Implemented map rastering, parsing of dataset to build a Graph, A* Search, turn-by-turn directions, location search Autocomplete, search to find location on the map.
-###
-| File | Description |
-| --- | --- |
-| [Rasterer](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/Rasterer.java) | Renders map images given a user's requested area and level of zoom |
-| [GraphDB](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/GraphDB.java) | Graph representation of the contents of [Berkeley OSM](https://github.com/Berkeley-CS61B/library-sp18/tree/proj3/data)|
-| [GraphBuildingHandler](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/GraphBuildingHandler.java) | Handler used by SAX parser to parse Nodes and Ways from Berkeley OSM file |
-| [Router](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/proj3/src/main/java/Router.java) | Uses A* search algorithm to find the shortest path between two points in Berkeley; uses shortest path to generate navigation directions. |
+- proj3: [Bear Maps](https://github.com/LanceSanity/Bear-Maps). This is a web mapping application that allows users to explore and find the shortest path between two points in Berkeley. Implemented map rastering, parsing of dataset to build a Graph, A* Search, turn-by-turn directions, location search Autocomplete, search to find location on the map.
 
 Homework
 -------
@@ -43,3 +36,5 @@ Lab
 - Lab11: [Graphs](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab11/lab11/graphs/MazeBreadthFirstPaths.java) - implemented Breadth First Search to solve mazes
 
 - Lab12: [Merge Sort and Quick Sort](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab12) - used queues do merge and quick sorts
+
+- Lab13: [Radix Sorts](https://github.com/LanceSanity/Berkeley-CS61B-Audit/tree/master/lab13) - implemented [Counting Sort](https://github.com/LanceSanity/Berkeley-CS61B-Audit/blob/master/lab13/CountingSort.java). todo: Radix Sort
